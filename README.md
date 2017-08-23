@@ -10,7 +10,7 @@ The following packages are required to build this kernel:
 ## Compiling
 
 ### Windows
-On Windows you'll need MinGW, Cygwin to be installed.
+On Windows you'll need MinGW, Cygwin or something different to be installed.
 To compile it, type this in the MSYS Shell...
 ```
 nasm -f elf32 -o loader.o loader.asm
