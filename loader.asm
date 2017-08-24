@@ -1,5 +1,5 @@
 global loader
-extern kernel_main
+extern main
 MAGIC equ 0x1badb002
 FLAGS equ 0x3
 CHECKSUM equ -(MAGIC+FLAGS)
@@ -11,7 +11,7 @@ dd FLAGS
 dd CHECKSUM
 
 loader:
-call kernel_main
+call main
 cli
 
 quit:
