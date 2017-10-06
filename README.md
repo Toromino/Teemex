@@ -1,4 +1,4 @@
-# Kernel
+# Teemex Kernel
 
 ## Required Packages
 The following packages are required to build this kernel:
