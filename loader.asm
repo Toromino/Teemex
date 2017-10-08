@@ -1,6 +1,7 @@
 global loader
+
 extern main
-MAGIC equ 0x1badb002
+MAGIC equ 0x1BADB002
 FLAGS equ 0x3
 CHECKSUM equ -(MAGIC+FLAGS)
 

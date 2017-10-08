@@ -5,7 +5,9 @@
  *      Author: Dennis Lucas Buchholz
  */
 
-
+#if !defined(__cplusplus)
+#include <stdbool.h>
+#endif
 
 #include <string.h>
 #include "../console.c"
@@ -19,6 +21,5 @@ void main()
 {
 	vid_init();
 	console_print("Test Kernel(v0.1) by Toromino");
-	console_print("\n\n[Test|Test-System]: ");
-	console_print(csr_y);
+	console_print("\n\n[Test|Test-System /]: ");
 }

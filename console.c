@@ -69,6 +69,7 @@ void console_put_str (char str)
 	{
 		dest = mem + (csr_y * 80 + csr_x);
 		*dest = str | att;
+
 		csr_x++;
 	}
 
