@@ -1,11 +1,14 @@
 # Teemex Kernel
 
+## What is Teemex?
+Teemex aims to be a lightweight OS kernel, which is easy to understand for human beeings. 
+
 ## Required Packages
 The following packages are required to build this kernel:
 - nasm
 - gcc
 - ld
-- qemu-system-i386 (optional)
+- qemu-system-i386 (for testing)
 
 ## Compiling
 
