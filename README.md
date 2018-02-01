@@ -1,7 +1,7 @@
 # Teemex Kernel
 
 ## What is Teemex?
-Teemex aims to be a lightweight OS kernel, which is easy to understand for human beeings. 
+Teemex aims to be a lightweight OS kernel, which is easy to understand for human beeings. Primarily for learning purposes. 
 
 ## Required Packages
 The following packages are required to build this kernel:
