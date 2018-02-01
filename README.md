@@ -13,8 +13,8 @@ The following packages are required to build this kernel:
 ## Compiling
 
 ### Windows
-On Windows you'll need MinGW, Cygwin or something different to be installed.
-To compile it, type this in the MSYS Shell...
+On Windows you'll need a POSIX shell like MinGW or Cygwin to be installed, to use make.
+For compiling use...
 ```
 make.exe Makefile
 ```
@@ -25,7 +25,7 @@ qemu-system-i386 -kernel start.bin
 ```
 
 ### Linux
-To compile it on Linux type...
+On Linux it's fairly easy...
 ```
 make teemex
 ```
