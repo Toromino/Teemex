@@ -30,9 +30,6 @@ OBJS 				:= tty.o
 teemex: teemex.bin
 	make clean
 
-teemex/drivers/keyboard.c.o: teemex/drivers/keyboard.c
-	@$(CC) $(CFLAGS) -MMD -MP -c teemex/drivers/keyboard.c -o teemex/drivers/keyboard.c.o
-
 arch/x86_64/tty.c.o: arch/x86_64/tty.c
 	@$(CC) $(CFLAGS) -MMD -MP -c arch/x86_64/tty.c -o arch/x86_64/tty.c.o
 
@@ -42,8 +39,8 @@ arch/x86_64/boot.asm.o: arch/x86_64/boot.asm
 init/main.c.o: init/main.c
 	@$(CC) $(CFLAGS) -MMD -MP -c init/main.c -o init/main.c.o
 
-teemex.bin: arch/x86_64/boot.asm.o teemex/drivers/keyboard.c.o arch/x86_64/tty.c.o init/main.c.o
-	ld -T arch/x86_64/linker.ld -m elf_i386 -o teemex.bin arch/x86_64/boot.asm.o teemex/drivers/keyboard.c.o arch/x86_64/tty.c.o init/main.c.o
+teemex.bin: arch/x86_64/boot.asm.o arch/x86_64/tty.c.o init/main.c.o
+	ld -T arch/x86_64/linker.ld -m elf_i386 -o teemex.bin arch/x86_64/boot.asm.o arch/x86_64/tty.c.o init/main.c.o
 
 # Will come up with a better solution ... later :)
 clean:
