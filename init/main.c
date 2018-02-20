@@ -21,6 +21,4 @@ void t_main()
 	tty_change_color(VGA_COLOR_GREEN);
 	tty_print("-- Teemex Kernel v0.1 --");
 	tty_print("\n\n[User|Test-System /]: ");
-	tty_move_csr();
-
 }
