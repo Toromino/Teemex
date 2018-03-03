@@ -6,7 +6,7 @@ Teemex aims to be a lightweight OS kernel, primarily for learning purposes.
 ## Required Packages
 The following packages are required to build Teemex:
 - nasm
-- GNU's gcc & ld
+- GNU's gcc, g++-multilib & ld
 - qemu-system-x86_64 (for testing)
 
 ## Compiling
@@ -16,5 +16,5 @@ make teemex
 
 ## Testing
 ```
-qemu-system-x86_64 -kernel start.bin
+qemu-system-x86_64 -kernel teemex.bin
 ```
