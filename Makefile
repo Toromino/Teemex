@@ -2,7 +2,6 @@
 ## Makefile
 ##
 ## This Makefile contains all neccesary build routines.
-## For better structuring and clarity everything is in this single file.
 ##
 ##  Created on: 13.01.2018
 ##      Author: Dennis Lucas Buchholz
@@ -24,23 +23,25 @@ LIBDIR 			:= $(PREFIX)/lib
 
 OBJS 				:= tty.o
 
-#CFLAGS := $(CFLAGS) $(ARCH_CFLAGS)
 .PHONY: clean
 
 teemex: teemex.bin
 	make clean
 
-arch/x86_64/tty.c.o: arch/x86_64/tty.c
-	@$(CC) $(CFLAGS) -MMD -MP -c arch/x86_64/tty.c -o arch/x86_64/tty.c.o
+lib/string.c.o: lib/string.c
+	@$(CC) $(CFLAGS) -MMD -MP -c lib/string.c -o lib/string.c.o
 
-arch/x86_64/boot.asm.o: arch/x86_64/boot.asm
-	nasm -f elf32 -o arch/x86_64/boot.asm.o arch/x86_64/boot.asm
+arch/x86/tty.c.o: arch/x86/tty.c
+	@$(CC) $(CFLAGS) -MMD -MP -c arch/x86/tty.c -o arch/x86/tty.c.o
+
+arch/x86/boot.asm.o: arch/x86/boot.asm
+	nasm -f elf32 -o arch/x86/boot.asm.o arch/x86/boot.asm
 
 init/main.c.o: init/main.c
 	@$(CC) $(CFLAGS) -MMD -MP -c init/main.c -o init/main.c.o
 
-teemex.bin: arch/x86_64/boot.asm.o arch/x86_64/tty.c.o init/main.c.o
-	ld -T arch/x86_64/linker.ld -m elf_i386 -o teemex.bin arch/x86_64/boot.asm.o arch/x86_64/tty.c.o init/main.c.o
+teemex.bin: lib/string.c.o arch/x86/boot.asm.o arch/x86/tty.c.o init/main.c.o
+	ld -T arch/x86/linker.ld -m elf_i386 -o teemex.bin lib/string.c.o arch/x86/boot.asm.o arch/x86/tty.c.o init/main.c.o
 
 # Will come up with a better solution ... later :)
 clean:
